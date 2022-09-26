@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ZodiacApp/1.0.0": {
+        "dependencies": {
+          "Aplication": "1.0.0"
+        },
+        "runtime": {
+          "ZodiacApp.dll": {}
+        }
+      },
+      "Aplication/1.0.0": {
+        "runtime": {
+          "Aplication.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ZodiacApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Aplication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

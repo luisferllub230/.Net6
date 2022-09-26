@@ -1,0 +1,71 @@
+﻿@model Aplication.ViewModel.LoanCalculatorViewModel
+
+<div class="row">
+    <div class="col-12 col-md-6">
+        <form asp-controller="loadCalculator" asp-action="Index">
+
+            <div class="card bg-dark mt-5 p-3">
+                <div class="cad-header">
+                    <h1 class="card-title text-primary">
+                        Calculadora de prestamos personales
+                    </h1>
+                    <p class="card-text text-info">
+                        Completar los campos requeridos para visualizar las cuotas a pagar.
+                    </p>
+                </div>
+
+                <div class="card-body">
+
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" id="monto" asp-for="Monto">Monto</label>
+                        <input type="number" min="0" class="form-control" placeholder="Monto" asp-for="Monto" required />
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <label class="input-group-text " asp-for="CoutoMensual" >Cuota Mensual</label>
+                        <select class="form-select" asp-for="CoutoMensual" required>
+                            <option selected>Choose...</option>
+                            @{
+                                for (var i = 12; i < 126; i += 6)
+                                {
+                                   <option value="@i"> @i meses</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" asp-for="PrestamoOpciones">Prestamo Opciones</label>
+                        <select class="form-select" id="opcions" asp-for="PrestamoOpciones" onchange="takeValue()" required>
+                            <option value="0" selected>Choose...</option>
+                            <option value="1">Personal</option>
+                            <option value="2">Automóvil</option>
+                            <option value="3">Hipotecario</option>
+                        </select>
+                    </div>
+
+
+                    <div class="input-group mb-3">
+                        <label class="input-group-text">Tasa de interes anual:</label>
+                        <input  type="text" id="value" class="bg-dark text-white fs-4"  disabled/>
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <button class="btn btn-success" type="submit">
+                        Calcular
+                    </button>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+
+    <div class="col-12 col-md-6 text-center">
+        <h1 class="mt-5">
+            @ViewBag.Total
+        </h1>
+    </div>
+</div>

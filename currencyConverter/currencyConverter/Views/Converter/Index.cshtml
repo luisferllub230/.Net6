@@ -1,0 +1,50 @@
+﻿@model Aplication.ViewModel.CoverterViewModel
+
+<div class="col-12">
+    <div class="mt-5 col-12">
+        <div class="card bg-dark">
+
+            <div class="card-header text-center ">
+                <h1 class="card-title"> Currency Converter</h1>
+            </div>
+
+            <form method="post" asp-controller="Converter" asp-action="Index">
+
+                <div class="card-body ">
+
+                    <div class="row">
+                        <div class="col-12 mt-2">
+                            <select class="form-select" asp-for="CoinValueSelected" required>
+                                <option selected>Select your corrency converter</option>
+                                <option value="1">Peso RD to dollar</option>
+                                <option value="2">Dollar to Peso RD</option>
+                                <option value="3">Peso RD to Euro</option>
+                                <option value="4">Euro to Peso RD</option>
+                            </select>
+                        </div>
+                        <div class="col-12 mt-2 flex-nowrap input-group">
+                            <label asp-for="CoinTypeTotal" class="input-group-text">Coin</label>
+                            <input asp-for="CoinTypeTotal" class="form-control" type="number" required/>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-success col-12">Convert</button>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="text-center col-12">
+            <h1 >
+                @ViewBag.totalConvert
+            </h1>
+            <p >
+                @ViewBag.NameConverter
+            </p>
+        </div>
+
+    </div>
+</div>

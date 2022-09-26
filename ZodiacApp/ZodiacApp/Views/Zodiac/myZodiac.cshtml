@@ -1,0 +1,15 @@
+﻿@model Aplication.ViewModel.ZodiacListViewModel
+
+<h1>
+    you are @foreach (var item in Model.ZodiacList)
+         {
+            @item.ZodiacName
+         }
+</h1>
+
+
+<div class="mt-5">
+    <p>
+        <a asp-controller="Zodiac" asp-action="Index">go to form</a>
+    </p>
+</div>
