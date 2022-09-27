@@ -19,7 +19,6 @@ namespace DataBase.Models
         public TypesPokemons typesPrimaryPokemons { get; set; }
 
         public int TypeSecondaryPokemonId { get; set; }
-        public TypesPokemons TypesSecondaryPokemons { get; set; }
 
     }
 }

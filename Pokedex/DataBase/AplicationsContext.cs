@@ -48,11 +48,36 @@ namespace DataBase
                 .HasForeignKey(Pokemons => Pokemons.TypePrimaryPokemonId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            #endregion
+
+
+            //fluid API property configuration
+            #region "property configuration"
+
+            #region Pokemons
+            modelBuilder.Entity<Pokemons>()
+                .Property(p => p.pokemonName)
+                .IsRequired();
+
+            modelBuilder.Entity<Pokemons>()
+                .Property(p => p.pokemonImg)
+                .IsRequired();
+            #endregion
+
+            #region PokemonsRegions
+            modelBuilder.Entity<PokemonRegions>()
+                .Property(p => p.pokemonRegionsName)
+                .IsRequired()
+                .HasMaxLength(100);
+            #endregion
+
+            #region TypesPokemons
             modelBuilder.Entity<TypesPokemons>()
-                .HasMany(TypesPokemons => TypesPokemons.pokemons)
-                .WithOne(Pokemons => Pokemons.TypesSecondaryPokemons)
-                .HasForeignKey(Pokemons => Pokemons.TypeSecondaryPokemonId)
-                .OnDelete(DeleteBehavior.Cascade);
+               .Property(p => p.typeName)
+               .IsRequired()
+               .HasMaxLength(100);
+            #endregion
+
             #endregion
         }
 
