@@ -1,0 +1,66 @@
+﻿@model Applications.ViewModel.SavePokemonsViewModel
+@{
+    ViewData["Title"] = "Save Pokemons";
+}
+
+<div class="row">
+
+    <div class="col-6 offset-3">
+        <div class="card bg-black text-white">
+            <div class="card-header">
+                <h4 id="h4Pokemon"></h4>
+            </div>
+            <form method="post" id="saveForm">
+                <div class="card-body">
+
+                    <input type="hidden" asp-for="id" id="IDpokemonSave"/>
+
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="pokemonName">Pokemon Name:</label>
+                        <input class="form-control" asp-for="pokemonName" type="text" />
+                        <span asp-validation-for="pokemonName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="pokemonImg">Pokemon url Img:</label>
+                        <input class="form-control" asp-for="pokemonImg" type="text" />
+                        <span asp-validation-for="pokemonImg" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="pokemonRegionId">Pokemon Regions:</label>
+                        <select class="form-select" asp-for="pokemonRegionId">
+                            <option selected>---Regions---</option>
+                            <option value="1">test</option>
+                        </select>
+                        <span asp-validation-for="pokemonRegionId" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="TypePrimaryPokemonId">Pokemon Type1:</label>
+                        <select class="form-select" asp-for="TypePrimaryPokemonId">
+                            <option selected>---Type1---</option>
+                            <option value="1">test</option>
+                        </select>
+                        <span asp-validation-for="TypePrimaryPokemonId" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" asp-for="TypeSecondaryPokemonId">Pokemon Type2:</label>
+                        <select class="form-select" asp-for="TypeSecondaryPokemonId">
+                            <option selected>---Type2---</option>
+                            <option value="1">test</option>
+                        </select>
+                        <span asp-validation-for="TypeSecondaryPokemonId" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-outline-success">Save</button>
+                    <a class="btn btn-outline-info" asp-controller="Pokemons" asp-action="Index">Go back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

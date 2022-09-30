@@ -14,9 +14,9 @@ namespace DataBase
         public AplicationsContext(DbContextOptions<AplicationsContext> options) : base(options) { }
 
         //property
-        DbSet<Pokemons> Pokemons { get; set; }
-        DbSet<PokemonRegions> PokemonRegions { get; set; }
-        DbSet<TypesPokemons> TypesPokemons { get; set; }
+        public DbSet<Pokemons> Pokemons { get; set; }
+        public DbSet<PokemonRegions> PokemonRegions { get; set; }
+        public DbSet<TypesPokemons> TypesPokemons { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) 
         {

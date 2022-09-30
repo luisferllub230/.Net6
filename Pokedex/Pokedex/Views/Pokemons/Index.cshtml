@@ -1,0 +1,27 @@
+﻿@model List<Applications.ViewModel.PokemonsViewModels>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-end">
+            <a class="btn btn-outline-success" asp-controller="Pokemons" asp-action="CreatePokemons">Create</a>
+        </div>
+    </div>
+    @foreach (Applications.ViewModel.PokemonsViewModels item in Model) 
+    {
+        <div class="card text-white bg-dark">
+            <div class="card-header">
+                @item.pokemonName
+            </div>
+            <div class="card-body">
+                <img src="@item.pokemonImg" alt="@item.pokemonName">
+            </div>
+            <div class="card-footer">
+                <div class="col-12">
+                    <a class="btn btn-outline-warning" asp-controller="Pokemons" asp-action="EditPokemons" asp-route-id="@item.id">edit</a>
+                    <a class="btn btn-outline-danger" asp-controller="Pokemons" asp-action="Delete" asp-route-id="@item.id">delete</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

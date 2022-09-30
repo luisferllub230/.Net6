@@ -1,2 +1,22 @@
-﻿
+﻿@model List<Applications.ViewModel.PokemonsViewModels>
+
+
 <h1>hello world</h1>
+
+<div class="row">
+    @foreach (Applications.ViewModel.PokemonsViewModels item in Model) 
+    {
+        <div class="card text-dark">
+            <div class="card-header">
+                @item.pokemonName
+            </div>
+            <div class="card-body">
+                @item.pokemonImg
+            </div>
+            <div class="card-footer">
+                <p>jsjisjsijas</p>
+            </div>
+        </div>
+    }
+
+</div>

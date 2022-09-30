@@ -61,3 +61,5 @@ C:\Users\HP\Desktop\.Net basic\Pokedex\Pokedex\obj\Debug\net6.0\refint\Pokedex.d
 C:\Users\HP\Desktop\.Net basic\Pokedex\Pokedex\obj\Debug\net6.0\Pokedex.pdb
 C:\Users\HP\Desktop\.Net basic\Pokedex\Pokedex\obj\Debug\net6.0\Pokedex.genruntimeconfig.cache
 C:\Users\HP\Desktop\.Net basic\Pokedex\Pokedex\obj\Debug\net6.0\ref\Pokedex.dll
+C:\Users\HP\Desktop\.Net basic\Pokedex\Pokedex\bin\Debug\net6.0\Applications.dll
+C:\Users\HP\Desktop\.Net basic\Pokedex\Pokedex\bin\Debug\net6.0\Applications.pdb

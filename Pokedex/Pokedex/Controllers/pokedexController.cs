@@ -1,12 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Applications.Services;
+using DataBase;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Pokedex.Controllers
 {
     public class pokedexController : Controller
     {
-        public IActionResult Index()
+
+        private readonly PokemonServices _pokemonServices;
+
+
+        public pokedexController(AplicationsContext DbContex) 
         {
-            return View();
+
+            _pokemonServices = new(DbContex);
+
+        }
+
+        public async Task<IActionResult>Index()
+        {
+            return View(await _pokemonServices.GetAllPokemonsServices());
         }
     }
 }
