@@ -7,13 +7,10 @@
 
     <div class="col-6 offset-3">
         <div class="card bg-black text-white">
-            <div class="card-header">
-                <h4 id="h4Pokemon"></h4>
-            </div>
-            <form method="post" id="saveForm">
+            <form method="post" class="saveForm">
                 <div class="card-body">
 
-                    <input type="hidden" asp-for="id" id="IDpokemonSave"/>
+                    <input type="hidden" asp-for="id" class="IDSave"/>
 
                     <div class="mb-3">
                         <label class="form-label" asp-for="pokemonName">Pokemon Name:</label>

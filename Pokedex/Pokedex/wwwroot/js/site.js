@@ -1,12 +1,15 @@
 ﻿//for change the form action in pokemon
-let id = document.getElementById("IDpokemonSave");
-let saveFormPokemon = document.getElementById("saveForm");
-let h4Pokemon = document.getElementById("h4Pokemon")
+let id = document.getElementsByClassName("IDSave");
+
+
+let saveFormPokemon = document.getElementsByClassName("saveForm");
+let saveFormPokemonType = document.getElementsByClassName("saveTypeForm");
+
 
 if (id.value === "0") {
     saveFormPokemon.action = "/Pokemons/CreatePokemons";
-    h4Pokemon.innerText = "Create mode";
+    saveFormPokemonType.action ="/Pokemons/CreatePokemonsTypes"
 } else {
     saveFormPokemon.action = "/Pokemons/EditPokemons";
-    h4Pokemon.innerText = "Edit mode";
+    saveFormPokemonType.action = "/Pokemons/EditPokemonsTypes"
 }

@@ -1,0 +1,31 @@
+﻿@model Applications.ViewModel.SavePokemonTypeViewModel
+
+
+
+<div class="row">
+
+    <div class="col-12">
+        <div class="card bg-dark text-white border border-5 rounded-3 shadow">
+            <div class="card-header">
+                <h4 class="text-center">Do you like to delete this Pokemon?</h4>
+            </div>
+            <form method="post" asp-controller="PokemonTypes" asp-action="DeletePost">
+                <div class="card-body">
+                    <div class="row d-flex">
+                        <div class="col-12 col-md-6">
+                            <ul>
+                                <li>Name: @Model.typeName</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <input type="hidden" asp-for="id" />
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-outline-danger">Delete</button>
+                    <a class="btn btn-outline-info" asp-controller="PokemonTypes" asp-action="Index">Go back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
