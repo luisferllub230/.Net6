@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataBase.Models
+namespace Applications.ViewModel
 {
-    public class PokemonRegions
+    public class SavePokemonRegionViewModel
     {
         public int id { get; set; }
+
+        [Required(ErrorMessage = "The name of pokemon region is require")]
         public string? pokemonRegionsName { get; set; }
-        
-        //navigation property
-        public ICollection<Pokemons>? pokemons { get; set; }
     }
 }

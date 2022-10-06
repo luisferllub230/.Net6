@@ -1,0 +1,27 @@
+﻿@model Applications.ViewModel.SavePokemonRegionViewModel;
+@{
+    ViewData["Title"] = "Save Pokemons Regions";
+}
+
+
+<div class="col-6 offset-3">
+    <div class="card bg-black text-white">
+        <form method="post" class="saveTypeForm">
+            <div class="card-body">
+
+                <input type="hidden" asp-for="id" class="IDSave" />
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="pokemonRegionsName">Pokemon Name:</label>
+                    <input class="form-control" asp-for="pokemonRegionsName" type="text" />
+                    <span asp-validation-for="pokemonRegionsName" class="text-danger"></span>
+                </div>
+
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-outline-success">Save</button>
+                <a class="btn btn-outline-info" asp-controller="PokemonRegion" asp-action="Index">Go back</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -4,14 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataBase.Models
+namespace Applications.ViewModel
 {
-    public class PokemonRegions
+    public class PokemonRegionViewModel
     {
         public int id { get; set; }
         public string? pokemonRegionsName { get; set; }
-        
-        //navigation property
-        public ICollection<Pokemons>? pokemons { get; set; }
     }
 }

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Applications.ViewModel.PokemonRegionViewModel>
+
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-end mb-4">
+            <a class="btn btn-outline-success" asp-controller="PokemonRegion" asp-action="CreatePokemonsRegion">Create</a>
+        </div>
+    </div>
+    <div class="card text-white bg-dark">
+        <div class="card-body">
+            <table class="table table-dark table-striped table-responsive">
+                <thead>
+                    <tr class="text-center">
+                        <th scope="col">#</th>
+                        <th scope="col">Region of Pokemon</th>
+                        <th scope="col">Opcions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Applications.ViewModel.PokemonRegionViewModel item in Model)
+                    {
+                        <tr class="text-center">
+                            <th scope="row">@item.id</th>
+                            <td>@item.pokemonRegionsName</td>
+                            <td class="d-flex justify-content-center">
+                                <a class="btn btn-outline-warning me-2" asp-controller="PokemonRegion" asp-action="EditPokemonsRegion" asp-route-id="@item.id">edit</a>
+                                <a class="btn btn-outline-danger" asp-controller="PokemonRegion" asp-action="Delete" asp-route-id="@item.id">delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
