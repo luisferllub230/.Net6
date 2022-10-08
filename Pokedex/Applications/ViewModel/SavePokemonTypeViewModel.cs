@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataBase.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,5 +14,6 @@ namespace Applications.ViewModel
 
         [Required(ErrorMessage = "The name of pokemon type is require")]
         public string? typeName { get; set; }
+
     }
 }

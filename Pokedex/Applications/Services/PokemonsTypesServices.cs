@@ -25,9 +25,15 @@ namespace Applications.Services
             return pokemonsTypeList.Select(p => new PokemonTypesViewModel
             {
                 id = p.id,
-                typeName = p.typeName
+                typeName = p.typeName,
             }
             ).ToList();
+        }
+
+        public async Task<int> countPokemonTypeList() 
+        {
+            var c = await _pr.GetAllAsync();
+            return c.Count();
         }
 
         public async Task Add(SavePokemonTypeViewModel spvm)

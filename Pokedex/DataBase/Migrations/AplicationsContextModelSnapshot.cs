@@ -68,6 +68,8 @@ namespace DataBase.Migrations
 
                     b.HasIndex("TypePrimaryPokemonId");
 
+                    b.HasIndex("TypeSecondaryPokemonId");
+
                     b.HasIndex("pokemonRegionId");
 
                     b.ToTable("Pokemons", (string)null);
@@ -99,6 +101,12 @@ namespace DataBase.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("DataBase.Models.TypesPokemons", "typesSecondaryPokemons")
+                        .WithMany()
+                        .HasForeignKey("TypeSecondaryPokemonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("DataBase.Models.PokemonRegions", "pokemonRegions")
                         .WithMany("pokemons")
                         .HasForeignKey("pokemonRegionId")
@@ -108,6 +116,8 @@ namespace DataBase.Migrations
                     b.Navigation("pokemonRegions");
 
                     b.Navigation("typesPrimaryPokemons");
+
+                    b.Navigation("typesSecondaryPokemons");
                 });
 
             modelBuilder.Entity("DataBase.Models.PokemonRegions", b =>

@@ -72,6 +72,8 @@ namespace Applications.Services
                id = p.id,
                pokemonName = p.pokemonName,
                pokemonImg = p.pokemonImg,
+               pokemonRegions = p.pokemonRegions,
+               typesPrimaryPokemons = p.typesPrimaryPokemons,
             }
             ).ToList();
         }

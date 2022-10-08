@@ -30,11 +30,23 @@ namespace Applications.Services
             ).ToList();
         }
 
+        public async Task<int> countPokemonRegionList()
+        {
+            var c = await _pr.GetAllAsync();
+            return c.Count();
+        }
+
         public async Task Add(SavePokemonRegionViewModel spvm)
         {
             PokemonRegions p = new();
             p.pokemonRegionsName = spvm.pokemonRegionsName;
             await _pr.addAsync(p);
+        }
+
+        public async Task<int> countPokemonTypeList()
+        {
+            var c = await _pr.GetAllAsync();
+            return c.Count();
         }
 
         public async Task Update(SavePokemonRegionViewModel spvm)

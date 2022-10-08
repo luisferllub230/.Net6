@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataBase.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,13 @@ namespace Applications.ViewModel
         public int id { get; set; }
         public string? pokemonName { get; set; }
         public string? pokemonImg { get; set; }
+
+        public PokemonRegions pokemonRegions { get; set; }
+        public TypesPokemons typesPrimaryPokemons { get; set; }
+
+        public int TypeSecondaryPokemonId { get; set; }
+        public TypesPokemons typesSecondaryPokemons { get; set; }// I don't know why it does not work  
+
 
     }
 }

@@ -16,3 +16,11 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.img-size {
+    width: auto;
+    height:auto;
+    max-height: 100%;
+    max-width:100%;
+    margin:0 auto;
+}

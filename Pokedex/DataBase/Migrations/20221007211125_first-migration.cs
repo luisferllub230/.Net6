@@ -4,7 +4,7 @@
 
 namespace DataBase.Migrations
 {
-    public partial class initialmigration : Migration
+    public partial class firstmigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -61,6 +61,12 @@ namespace DataBase.Migrations
                         principalTable: "TypesPokemons",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Pokemons_TypesPokemons_TypeSecondaryPokemonId",
+                        column: x => x.TypeSecondaryPokemonId,
+                        principalTable: "TypesPokemons",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateIndex(
@@ -72,6 +78,11 @@ namespace DataBase.Migrations
                 name: "IX_Pokemons_TypePrimaryPokemonId",
                 table: "Pokemons",
                 column: "TypePrimaryPokemonId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pokemons_TypeSecondaryPokemonId",
+                table: "Pokemons",
+                column: "TypeSecondaryPokemonId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

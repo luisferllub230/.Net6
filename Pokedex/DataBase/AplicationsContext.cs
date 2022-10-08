@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +15,9 @@ namespace DataBase
         public AplicationsContext(DbContextOptions<AplicationsContext> options) : base(options) { }
 
         //property
-        public DbSet<Pokemons> Pokemons { get; set; }
-        public DbSet<PokemonRegions> PokemonRegions { get; set; }
-        public DbSet<TypesPokemons> TypesPokemons { get; set; }
+        public DbSet<Pokemons>? Pokemons { get; set; }
+        public DbSet<PokemonRegions>? PokemonRegions { get; set; }
+        public DbSet<TypesPokemons>? TypesPokemons { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) 
         {
@@ -36,17 +37,26 @@ namespace DataBase
 
             //fluid API relationships
             #region relationships
+
             modelBuilder.Entity<PokemonRegions>()
                 .HasMany<Pokemons>(PokemonRegions => PokemonRegions.pokemons)
                 .WithOne(Pokemons => Pokemons.pokemonRegions)
                 .HasForeignKey(Pokemons => Pokemons.pokemonRegionId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+
             modelBuilder.Entity<TypesPokemons>()
-                .HasMany(TypesPokemons => TypesPokemons.pokemons)
-                .WithOne(Pokemons => Pokemons.typesPrimaryPokemons)
-                .HasForeignKey(Pokemons => Pokemons.TypePrimaryPokemonId)
+                .HasMany<Pokemons>(m => m.pokemons)
+                .WithOne(p => p.typesPrimaryPokemons)
+                .HasForeignKey(p => p.TypePrimaryPokemonId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+
+            //modelBuilder.Entity<TypesPokemons>()
+            //    .HasMany<Pokemons>(m => m.pokemons)
+            //    .WithOne(p => p.typesSecondaryPokemons)
+            //    .HasForeignKey(p => p.TypeSecondaryPokemonId)
+            //    .OnDelete(DeleteBehavior.SetNull);
 
             #endregion
 

@@ -1,20 +1,21 @@
 ﻿@model List<Applications.ViewModel.PokemonsViewModels>
 
 
-<h1>hello world</h1>
-
 <div class="row">
     @foreach (Applications.ViewModel.PokemonsViewModels item in Model) 
     {
-        <div class="card text-dark">
-            <div class="card-header">
-                @item.pokemonName
-            </div>
+        <div class="card me-3 mb-4 bg-dark text-white col-12 col-md-4 border border-5 border-info shadow">
             <div class="card-body">
-                @item.pokemonImg
-            </div>
-            <div class="card-footer">
-                <p>jsjisjsijas</p>
+                <div class="mb-3 col-12 border-bottom border-3 text-center">
+                    <img src="@item.pokemonImg" class="img-size" alt="@item.pokemonName">
+                </div>
+                <div>
+                    <ul>
+                        <li>Name: @item.pokemonName</li>
+                        <li>Region: @item.pokemonRegions.pokemonRegionsName</li>
+                        <li>Type: @item.typesPrimaryPokemons.typeName</li>
+                    </ul>
+                </div>
             </div>
         </div>
     }
