@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Applications.ViewModel.PokemonRegionViewModel>
+﻿@model IEnumerable<Pokedex.core.Application.ViewModel.PokemonRegionViewModel>
 
 <div class="row">
     <div class="col-12">
@@ -17,7 +17,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (Applications.ViewModel.PokemonRegionViewModel item in Model)
+                    @foreach (Pokedex.core.Application.ViewModel.PokemonRegionViewModel item in Model)
                     {
                         <tr class="text-center">
                             <th scope="row">@item.id</th>

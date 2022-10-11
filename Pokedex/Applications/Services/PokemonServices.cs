@@ -1,22 +1,22 @@
-﻿using Applications.Repository;
-using Applications.ViewModel;
-using DataBase;
-using DataBase.Models;
+﻿using Pokedex.core.Application.Interfaces.Repositories;
+using Pokedex.core.Application.Interfaces.Services;
+using Pokedex.core.Application.ViewModel;
+using Pokedex.core.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Applications.Services
+namespace Pokedex.core.Application.Services
 {
-    public class PokemonServices
+    public class PokemonServices : IPokemonServices
     {
-        private readonly PokemonRepository _pr;
+        private readonly IPokemonRepository _pr;
 
-        public PokemonServices(AplicationsContext appc) 
+        public PokemonServices(IPokemonRepository Pokemon) 
         {
-            _pr = new(appc);
+            _pr = Pokemon;
         }
 
         

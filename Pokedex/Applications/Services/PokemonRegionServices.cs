@@ -1,22 +1,22 @@
-﻿using Applications.Repository;
-using Applications.ViewModel;
-using DataBase.Models;
-using DataBase;
+﻿using Pokedex.core.Application.Interfaces.Repositories;
+using Pokedex.core.Application.Interfaces.Services;
+using Pokedex.core.Application.ViewModel;
+using Pokedex.core.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Applications.Services
+namespace Pokedex.core.Application.Services
 {
-    public class PokemonRegionServices
+    public class PokemonRegionServices : IPokemonRegionServices
     {
-        private readonly PokemonRegionRepository _pr;
+        private readonly IPokemonRegionRepository _pr;
 
-        public PokemonRegionServices(AplicationsContext appc)
+        public PokemonRegionServices(IPokemonRegionRepository appc)
         {
-            _pr = new(appc);
+            _pr = appc;
         }
 
         public async Task<List<PokemonRegionViewModel>> GetAllPokemonsServices()

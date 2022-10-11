@@ -1,17 +1,17 @@
-﻿using Applications.Services;
-using Applications.ViewModel;
-using DataBase;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Pokedex.core.Application.Interfaces.Services;
+using Pokedex.core.Application.ViewModel;
+using Pokedex.infraestruture.Persistence.Context;
 
 namespace Pokedex.Controllers
 {
     public class PokemonRegionController : Controller
     {
-        private readonly PokemonRegionServices _pokemonRegionServices;
+        private readonly IPokemonRegionServices _pokemonRegionServices;
 
-        public PokemonRegionController(AplicationsContext DbContex)
+        public PokemonRegionController(IPokemonRegionServices DbContex)
         {
-            _pokemonRegionServices = new(DbContex);
+            _pokemonRegionServices = DbContex;
         }
 
 

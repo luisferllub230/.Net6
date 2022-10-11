@@ -1,0 +1,15 @@
+C:\Users\HP\Desktop\.Net basic\Pokedex\Applications\obj\Debug\net6.0\Pokedex.core.Application.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\.Net basic\Pokedex\Applications\obj\Debug\net6.0\Pokedex.core.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\.Net basic\Pokedex\Applications\obj\Debug\net6.0\Pokedex.core.Application.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\.Net basic\Pokedex\Applications\obj\Debug\net6.0\Pokedex.core.Application.AssemblyInfo.cs
+C:\Users\HP\Desktop\.Net basic\Pokedex\Applications\obj\Debug\net6.0\Pokedex.core.Application.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\.Net basic\Pokedex\Applications\bin\Debug\net6.0\Pokedex.core.Application.deps.json
+C:\Users\HP\Desktop\.Net basic\Pokedex\Applications\bin\Debug\net6.0\Pokedex.core.Application.dll
+C:\Users\HP\Desktop\.Net basic\Pokedex\Applications\bin\Debug\net6.0\Pokedex.core.Application.pdb
+C:\Users\HP\Desktop\.Net basic\Pokedex\Applications\bin\Debug\net6.0\Pokedex.core.Domain.dll
+C:\Users\HP\Desktop\.Net basic\Pokedex\Applications\bin\Debug\net6.0\Pokedex.core.Domain.pdb
+C:\Users\HP\Desktop\.Net basic\Pokedex\Applications\obj\Debug\net6.0\Pokedex.core.Application.csproj.CopyComplete
+C:\Users\HP\Desktop\.Net basic\Pokedex\Applications\obj\Debug\net6.0\Pokedex.core.Application.dll
+C:\Users\HP\Desktop\.Net basic\Pokedex\Applications\obj\Debug\net6.0\refint\Pokedex.core.Application.dll
+C:\Users\HP\Desktop\.Net basic\Pokedex\Applications\obj\Debug\net6.0\Pokedex.core.Application.pdb
+C:\Users\HP\Desktop\.Net basic\Pokedex\Applications\obj\Debug\net6.0\ref\Pokedex.core.Application.dll

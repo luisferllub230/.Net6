@@ -1,18 +1,19 @@
-﻿using Applications.Services;
-using Applications.ViewModel;
-using DataBase;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Pokedex.core.Application.Interfaces.Services;
+using Pokedex.core.Application.Services;
+using Pokedex.core.Application.ViewModel;
+using Pokedex.infraestruture.Persistence.Context;
 
 namespace Pokedex.Controllers
 {
     public class PokemonTypesController : Controller
     {
 
-        private readonly PokemonsTypesServices _pokemonTypesServices;
+        private readonly IPokemonTypeServices _pokemonTypesServices;
 
-        public PokemonTypesController(AplicationsContext DbContex)
+        public PokemonTypesController(IPokemonTypeServices DbContex)
         {
-            _pokemonTypesServices = new(DbContex);
+            _pokemonTypesServices = DbContex;
         }
 
         

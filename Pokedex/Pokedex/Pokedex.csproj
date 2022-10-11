@@ -7,11 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.9">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.9">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -19,8 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Applications\Applications.csproj" />
-    <ProjectReference Include="..\DataBase\DataBase.csproj" />
+    <ProjectReference Include="..\Applications\Pokedex.core.Application.csproj" />
+    <ProjectReference Include="..\DataBase\Pokedex.infraestruture.Persistence.csproj" />
+    <ProjectReference Include="..\Pokedex.core.Domain\Pokedex.core.Domain.csproj" />
   </ItemGroup>
 
 </Project>
